@@ -1,0 +1,87 @@
+---
+/**
+ * @file Footer.astro
+ * @description Componente de pie de página que muestra el copyright y enlaces de navegación.
+ * Incluye estilos responsivos y efectos de hover en los enlaces.
+ */
+---
+
+<!-- 
+  Sección de pie de página con clase para estilizado
+  Incluye información de copyright y enlaces de navegación
+-->
+<footer class="footer">
+	<!-- Contenedor principal para centrar el contenido -->
+	<div class="container">
+		<!-- Contenedor flexible para el contenido del footer -->
+		<div class="footer-content">
+			<!-- Texto de copyright con año dinámico -->
+			<p>&copy; {new Date().getFullYear()} Edgar Rodriguez. Todos los derechos reservados.</p>
+			
+			<!-- Contenedor para los enlaces de navegación -->
+			<nav class="footer-links" aria-label="Navegación secundaria">
+				<!-- Enlaces internos a las secciones principales -->
+				<a href="#home">Inicio</a>
+				<a href="#about">Sobre mí</a>
+				<a href="#projects">Proyectos</a>
+				<a href="#contact">Contacto</a>
+			</nav>
+		</div>
+	</div>
+</footer>
+
+<style>
+	/* ===== ESTILOS PRINCIPALES DEL FOOTER ===== */
+	.footer {
+		background-color: var(--primary-color);  /* Color de fondo usando variable CSS */
+		color: white;  /* Color de texto principal */
+		padding: 2rem 0;  /* Espaciado vertical */
+		border-top: 1px solid rgba(255, 255, 255, 0.1);  /* Borde superior sutil */
+	}
+
+	/* Contenedor flexible para el contenido del footer */
+	.footer-content {
+		display: flex;  /* Usa flexbox para alinear elementos */
+		justify-content: space-between;  /* Espacio entre elementos */
+		align-items: center;  /* Centrado vertical */
+		flex-wrap: wrap;  /* Permite que los elementos se envuelvan en pantallas pequeñas */
+		gap: 1rem;  /* Espacio entre elementos cuando se envuelven */
+		max-width: 1200px;  /* Ancho máximo del contenido */
+		margin: 0 auto;  /* Centrado horizontal */
+		padding: 0 1.5rem;  /* Espaciado horizontal */
+	}
+
+	/* Estilo del texto de copyright */
+	.footer-content p {
+		color: #999;  /* Color de texto gris claro */
+		font-size: 0.9rem;  /* Tamaño de fuente pequeño */
+		margin: 0;  /* Elimina márgenes por defecto */
+	}
+
+	.footer-links {
+		display: flex;
+		gap: 2rem;
+	}
+
+	.footer-links a {
+		color: #999;
+		text-decoration: none;
+		font-size: 0.9rem;
+		transition: color 0.2s ease;
+	}
+
+	.footer-links a:hover {
+		color: white;
+	}
+
+	@media (max-width: 768px) {
+		.footer-content {
+			flex-direction: column;
+			text-align: center;
+		}
+
+		.footer-links {
+			gap: 1rem;
+		}
+	}
+</style>

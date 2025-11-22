@@ -1,0 +1,169 @@
+---
+/**
+ * @file Links.astro
+ * @description Componente que muestra una cuadrícula de enlaces importantes.
+ * Incluye enlaces a perfiles profesionales y contacto.
+ */
+---
+
+<!-- Sección de enlaces con ID para navegación -->
+<section id="links" class="links">
+  <div class="container">
+    <!-- Título de la sección -->
+    <h2 class="section-title">Enlaces de Interés</h2>
+    
+    <!-- Contenedor de la cuadrícula de enlaces -->
+    <div class="links-grid">
+      <!-- Tarjeta de enlace a GitHub -->
+      <a href="https://github.com/Abstracted22" 
+         target="_blank" 
+         rel="noopener" 
+         class="link-card" 
+         aria-label="Visitar perfil de GitHub">
+        <h3>GitHub</h3>
+        <p>Mis proyectos y código abierto</p>
+        <span class="link-arrow" aria-hidden="true">→</span>
+      </a>
+
+      <!-- Tarjeta de enlace a LinkedIn -->
+      <a href="https://www.linkedin.com/in/edgar-jhoan-rodriguez-leyton-99a77723b/?lipi=urn%3Ali%3Apage%3Ap_mwlite_my_network%3BD79F99YEQg6l%2FPClCb6ISw%3D%3D" 
+         target="_blank" 
+         rel="noopener" 
+         class="link-card"
+         aria-label="Visitar perfil de LinkedIn">
+        <h3>LinkedIn</h3>
+        <p>Mi perfil profesional</p>
+        <span class="link-arrow" aria-hidden="true">→</span>
+      </a>
+
+
+      <!-- Tarjeta de enlace para contacto por correo -->
+      <a href="mailto:jhoan-afk@hotmail.com" 
+         class="link-card"
+         aria-label="Enviar correo electrónico">
+        <h3>Email</h3>
+        <p>Contacto directo</p>
+        <span class="link-arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Estilos para la sección de enlaces */
+  .links {
+    padding: 6rem 0;                    /* Espaciado vertical */
+    background: rgba(25, 25, 25, 0.85); /* Fondo oscuro semitransparente */
+    backdrop-filter: blur(5px);          /* Efecto de desenfoque */
+  }
+
+  /* Título de la sección */
+  .section-title {
+    font-size: 2.5rem;                  /* Tamaño de fuente grande */
+    text-align: center;                 /* Centrado */
+    margin-bottom: 3rem;                /* Espaciado inferior */
+    color: #ffffff;                     /* Color de texto blanco */
+    font-weight: 600;                   /* Grosor de la fuente */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Sombra de texto */
+  }
+
+  /* Contenedor de la cuadrícula de enlaces */
+  .links-grid {
+    display: grid;                      /* Usa CSS Grid para el diseño */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas responsivas */
+    gap: 1.5rem;                       /* Espacio entre tarjetas */
+    max-width: 1000px;                 /* Ancho máximo del contenedor */
+    margin: 0 auto;                    /* Centrado horizontal */
+    padding: 0 1.5rem;                 /* Espaciado horizontal en móviles */
+  }
+
+  /* Estilo de las tarjetas de enlace */
+  .link-card {
+    display: flex;                      /* Usa flexbox para el diseño interno */
+    flex-direction: column;             /* Apila los elementos verticalmente */
+    background: rgba(40, 40, 40, 0.8);  /* Fondo semitransparente oscuro */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
+    border-radius: 12px;                /* Bordes redondeados */
+    padding: 2rem;                      /* Espaciado interno */
+    text-decoration: none;              /* Sin subrayado */
+    color: inherit;                     /* Hereda el color del texto */
+    transition: all 0.3s ease;          /* Transición suave para efectos */
+    backdrop-filter: blur(5px);         /* Efecto de desenfoque */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  }
+
+  /* Efecto hover en las tarjetas */
+  .link-card:hover {
+    transform: translateY(-6px);        /* Efecto de elevación */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    border: 1px solid rgba(96, 165, 250, 0.5); /* Borde con color de acento */
+    background: rgba(50, 50, 50, 0.9);  /* Fondo ligeramente más claro */
+  }
+
+  /* Estilo del título de la tarjeta */
+  .link-card h3 {
+    font-size: 1.5rem;                  /* Tamaño de fuente */
+    margin: 0 0 0.75rem 0;              /* Margen inferior */
+    color: #ffffff;                     /* Color de texto blanco */
+    font-weight: 600;                   /* Grosor de la fuente */
+  }
+
+  /* Estilo del párrafo descriptivo */
+  .link-card p {
+    margin: 0;                          /* Elimina márgenes por defecto */
+    color: rgba(255, 255, 255, 0.8);    /* Texto ligeramente transparente */
+    flex-grow: 1;                       /* Ocupa el espacio disponible */
+    line-height: 1.6;                   /* Interlineado cómodo */
+  }
+
+  /* Estilo de la flecha de enlace */
+  .link-arrow {
+    align-self: flex-end;               /* Alinea a la derecha */
+    font-size: 1.5rem;                  /* Tamaño de la flecha */
+    margin-top: 1.5rem;                 /* Espacio superior */
+    transition: transform 0.3s ease;    /* Transición suave */
+    color: rgba(255, 255, 255, 0.8);    /* Color de la flecha */
+  }
+
+  /* Efecto hover en la flecha */
+  .link-card:hover .link-arrow {
+    transform: translateX(5px);         /* Desplaza la flecha a la derecha */
+    color: #60a5fa;                     /* Cambia el color al hacer hover */
+  }
+
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    .links {
+      padding: 4rem 0;                  /* Reduce el espaciado vertical */
+    }
+
+    .section-title {
+      font-size: 2rem;                  /* Tamaño de fuente más pequeño */
+      margin-bottom: 2rem;              /* Reduce el margen inferior */
+    }
+
+    .links-grid {
+      grid-template-columns: 1fr;        /* Una columna en móviles */
+      gap: 1rem;                        /* Reduce el espacio entre tarjetas */
+      padding: 0 1rem;                  /* Ajusta el espaciado horizontal */
+    }
+
+    .link-card {
+      padding: 1.5rem;                  /* Reduce el espaciado interno */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .section-title {
+      font-size: 1.8rem;                /* Tamaño de fuente más pequeño */
+    }
+
+    .link-card h3 {
+      font-size: 1.3rem;                /* Tamaño de fuente más pequeño */
+    }
+
+    .link-card p {
+      font-size: 0.95rem;               /* Tamaño de fuente más pequeño */
+    }
+  }
+</style>

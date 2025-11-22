@@ -1,0 +1,114 @@
+---
+/**
+ * @file Header.astro
+ * @description Componente de encabezado que contiene la barra de navegación principal.
+ * Incluye el logotipo animado y los enlaces de navegación.
+ */
+---
+
+<!-- Encabezado fijo en la parte superior de la página -->
+<header class="header">
+	<!-- Barra de navegación principal -->
+	<nav class="nav">
+		<!-- Logotipo animado -->
+		<img src="/images/GifChip.gif" alt="Animación" class="nav-logo" />
+		
+		<!-- Enlaces de navegación -->
+		<a href="#home" class="nav-link">Inicio</a>
+		<a href="#about" class="nav-link">Sobre mí</a>
+		<a href="#projects" class="nav-link">Proyectos</a>
+		<a href="#contact" class="nav-link">Contacto</a>
+		<a href="#links" class="nav-link">Links</a>
+	</nav>
+</header>
+
+<style>
+	/* ===== ESTILOS DEL ENCABEZADO ===== */
+	.header {
+		position: fixed;       /* Fija el encabezado en la parte superior */
+		top: 0;                /* Lo coloca en la parte superior de la ventana */
+		left: 0;               /* Alineación a la izquierda */
+		right: 0;              /* Ocupa todo el ancho de la ventana */
+		background: rgba(30, 30, 30, 0.95);  /* Fondo oscuro con transparencia */
+		backdrop-filter: blur(10px);  /* Efecto de desenfoque del fondo */
+		border-bottom: 1px solid var(--border-color);  /* Borde inferior sutil */
+		z-index: 1000;          /* Asegura que esté por encima de otros elementos */
+		padding: 1rem 0;        /* Espaciado vertical */
+	}
+
+	/* ===== BARRA DE NAVEGACIÓN ===== */
+	.nav {
+		display: flex;           /* Usa flexbox para alinear elementos */
+		justify-content: center; /* Centra los elementos horizontalmente */
+		align-items: center;     /* Centra los elementos verticalmente */
+		gap: 2rem;              /* Espacio entre elementos */
+		max-width: 1200px;      /* Ancho máximo del contenido */
+		margin: 0 auto;         /* Centra la barra de navegación */
+		padding: 0 2rem;        /* Espaciado horizontal */
+	}
+
+	/* ===== LOGOTIPO ===== */
+	.nav-logo {
+		height: 40px;           /* Altura fija para el logotipo */
+		width: auto;            /* Mantiene la proporción de aspecto */
+		margin-right: 1rem;     /* Espacio a la derecha del logotipo */
+		transition: transform 0.3s ease;  /* Transición suave al hacer hover */
+	}
+
+	/* Efecto de escala al pasar el mouse sobre el logotipo */
+	.nav-logo:hover {
+		transform: scale(1.1);
+	}
+
+	/* ===== ENLACES DE NAVEGACIÓN ===== */
+	.nav-link {
+		color: #ffffff;          /* Color del texto */
+		font-size: 0.9rem;      /* Tamaño de fuente */
+		font-weight: 500;       /* Grosor de la fuente */
+		transition: all 0.2s ease;  /* Transición suave para efectos hover */
+		padding: 0.5rem 1rem;   /* Espaciado interior */
+		border-radius: 4px;     /* Bordes redondeados */
+		text-transform: uppercase;  /* Texto en mayúsculas */
+		letter-spacing: 0.5px;  /* Espaciado entre letras */
+	}
+
+	/* Efecto al pasar el mouse sobre los enlaces */
+	.nav-link:hover {
+		color: #60a5fa;          /* Cambia el color del texto */
+		background: rgba(255, 255, 255, 0.1);  /* Fondo sutil */
+		transform: translateY(-2px);  /* Efecto de elevación */
+	}
+
+	/* ===== DISEÑO RESPONSIVE ===== */
+	/* Estilos para pantallas pequeñas (hasta 768px) */
+	@media (max-width: 768px) {
+		.nav {
+			gap: 0.5rem;          /* Reduce el espacio entre elementos */
+			padding: 0 1rem;      /* Reduce el espaciado horizontal */
+			flex-wrap: wrap;      /* Permite que los elementos se envuelvan */
+			justify-content: center; /* Centra los elementos */
+		}
+
+		.nav-logo {
+			height: 35px;         /* Reduce ligeramente el tamaño del logotipo */
+			margin-right: 0.5rem; /* Reduce el margen derecho */
+		}
+
+		.nav-link {
+			font-size: 0.8rem;    /* Reduce el tamaño de fuente */
+			padding: 0.4rem 0.8rem; /* Ajusta el espaciado */
+		}
+	}
+
+	/* Estilos para pantallas muy pequeñas (hasta 480px) */
+	@media (max-width: 480px) {
+		.nav {
+			gap: 0.25rem;         /* Reduce aún más el espacio entre elementos */
+		}
+
+		.nav-link {
+			font-size: 0.75rem;   /* Reduce más el tamaño de fuente */
+			padding: 0.3rem 0.6rem; /* Ajusta el espaciado */
+		}
+	}
+</style>

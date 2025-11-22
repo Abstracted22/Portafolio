@@ -1,0 +1,218 @@
+---
+/**
+ * @file Contact.astro
+ * @description Componente de la sección de contacto.
+ * Incluye información de contacto y un formulario de contacto.
+ */
+---
+
+<!-- Sección de contacto con ID para navegación -->
+<section id="contact" class="contact">
+  <div class="container">
+    <!-- Título de la sección -->
+    <h2 class="section-title">Contacto</h2>
+    
+    <!-- Contenedor del contenido de contacto -->
+    <div class="contact-content">
+      <!-- Texto descriptivo -->
+      <p class="contact-text">
+        ¿Tienes un proyecto en mente o quieres trabajar juntos?<br>
+        ¡No dudes en contactarme!
+      </p>
+      
+      <!-- Información de contacto -->
+      <div class="contact-info">
+        <!-- Elemento de correo electrónico -->
+        <div class="contact-item">
+          <span class="contact-icon">✉️</span>
+          <a href="mailto:edgar.rodriguez@example.com" class="contact-link">
+            jhoan-afk@hotmail.com
+          </a>
+        </div>
+        
+        <!-- Elemento de teléfono -->
+        <div class="contact-item">
+          <span class="contact-icon">📱</span>
+          <span class="contact-text">+34 637 03 5713</span>
+        </div>
+        
+        <!-- Elemento de ubicación -->
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <span class="contact-text">Denia, España</span>
+        </div>
+      </div>
+      
+      <!-- Redes sociales -->
+      <div class="social-links">
+        <a href="https://github.com/Abstracted22" target="_blank" rel="noopener" aria-label="GitHub" class="social-link">
+          <span class="sr-only">GitHub</span>🐙
+        </a>
+        <a href="https://www.linkedin.com/in/edgar-jhoan-rodriguez-leyton-99a77723b/?lipi=urn%3Ali%3Apage%3Ap_mwlite_my_network%3BD79F99YEQg6l%2FPClCb6ISw%3D%3D" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-link">
+          <span class="sr-only">LinkedIn</span>💼
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ===== ESTILOS PRINCIPALES DEL CONTACTO ===== */
+  .contact {
+    padding: 6rem 0;                    /* Espaciado vertical */
+    background: rgba(25, 25, 25, 0.85); /* Fondo oscuro semitransparente */
+    backdrop-filter: blur(5px);          /* Efecto de desenfoque */
+    color: #f8f9fa;                     /* Color de texto principal */
+  }
+
+  /* Título de la sección */
+  .section-title {
+    font-size: 2.5rem;                  /* Tamaño de fuente grande */
+    text-align: center;                 /* Centrado */
+    margin-bottom: 3rem;                /* Espaciado inferior */
+    font-weight: 600;                   /* Grosor de la fuente */
+    color: #ffffff;                     /* Color de texto blanco */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Sombra de texto */
+  }
+
+  /* Contenedor del contenido principal */
+  .contact-content {
+    max-width: 600px;                   /* Ancho máximo del contenido */
+    margin: 0 auto;                     /* Centrado horizontal */
+    text-align: center;                 /* Alineación del texto al centro */
+  }
+
+  /* Texto descriptivo */
+  .contact-text {
+    font-size: 1.15rem;                 /* Tamaño de fuente legible */
+    color: #e0e0e0;                     /* Color de texto gris claro */
+    margin-bottom: 2.5rem;              /* Espaciado inferior */
+    line-height: 1.7;                   /* Interlineado cómodo */
+  }
+
+  /* Contenedor de la información de contacto */
+  .contact-info {
+    display: flex;                      /* Usa flexbox para el diseño */
+    flex-direction: column;             /* Apila los elementos verticalmente */
+    gap: 1.25rem;                       /* Espacio entre elementos */
+    margin-bottom: 2.5rem;              /* Espaciado inferior */
+  }
+
+  /* Elemento individual de contacto */
+  .contact-item {
+    display: flex;                      /* Usa flexbox para alinear icono y texto */
+    align-items: center;                /* Centrado vertical */
+    justify-content: center;            /* Centrado horizontal */
+    gap: 1rem;                          /* Espacio entre icono y texto */
+  }
+
+  /* Icono de contacto */
+  .contact-icon {
+    font-size: 1.5rem;                  /* Tamaño del icono */
+    opacity: 0.9;                       /* Opacidad ligeramente reducida */
+  }
+
+  /* Enlace de contacto */
+  .contact-link {
+    color: #60a5fa;                     /* Color de acento para enlaces */
+    text-decoration: none;              /* Sin subrayado */
+    transition: opacity 0.2s ease;      /* Transición suave al hacer hover */
+  }
+
+  .contact-link:hover {
+    opacity: 0.8;                       /* Efecto de opacidad al hacer hover */
+    text-decoration: underline;         /* Subrayado al hacer hover */
+  }
+
+  /* Contenedor de redes sociales */
+  .social-links {
+    display: flex;                      /* Usa flexbox para los iconos */
+    justify-content: center;            /* Centrado horizontal */
+    gap: 1.5rem;                        /* Espacio entre iconos */
+    margin-top: 2rem;                   /* Espaciado superior */
+  }
+
+  /* Enlace de red social */
+  .social-link {
+    display: inline-flex;               /* Usa flexbox para centrar el icono */
+    align-items: center;                /* Centrado vertical */
+    justify-content: center;            /* Centrado horizontal */
+    width: 3rem;                        /* Ancho fijo */
+    height: 3rem;                       /* Altura fija */
+    border-radius: 50%;                 /* Forma circular */
+    background: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
+    color: #ffffff;                     /* Color de icono blanco */
+    font-size: 1.5rem;                  /* Tamaño del icono */
+    transition: all 0.3s ease;          /* Transición suave para efectos */
+    text-decoration: none;              /* Sin subrayado */
+  }
+
+  /* Efecto hover en los enlaces de redes sociales */
+  .social-link:hover {
+    background: var(--accent-color);    /* Fondo con color de acento */
+    transform: translateY(-3px);        /* Efecto de elevación */
+    box-shadow: 0 4px 15px rgba(96, 165, 250, 0.3); /* Sombra suave */
+  }
+
+  /* Texto oculto para accesibilidad */
+  .sr-only {
+    position: absolute;                 /* Posicionamiento absoluto */
+    width: 1px;                         /* Ancho mínimo */
+    height: 1px;                        /* Altura mínima */
+    padding: 0;                         /* Sin relleno */
+    margin: -1px;                       /* Márgenes negativos */
+    overflow: hidden;                   /* Oculta el desbordamiento */
+    clip: rect(0, 0, 0, 0);             /* Recorta el texto */
+    white-space: nowrap;                /* Evita saltos de línea */
+    border-width: 0;                    /* Sin borde */
+  }
+
+  /* ===== DISEÑO RESPONSIVE ===== */
+  /* Estilos para pantallas medianas (hasta 768px) */
+  @media (max-width: 768px) {
+    .contact {
+      padding: 5rem 0;                  /* Reduce el espaciado vertical */
+    }
+
+    .section-title {
+      font-size: 2.2rem;                /* Tamaño de fuente más pequeño */
+      margin-bottom: 2.5rem;            /* Reduce el margen inferior */
+    }
+
+    .contact-text {
+      font-size: 1.05rem;               /* Tamaño de fuente ligeramente más pequeño */
+      padding: 0 1rem;                  /* Añade espaciado horizontal */
+    }
+
+    .contact-info {
+      gap: 1.1rem;                      /* Reduce el espacio entre elementos */
+    }
+  }
+
+  /* Estilos para pantallas pequeñas (hasta 480px) */
+  @media (max-width: 480px) {
+    .section-title {
+      font-size: 2rem;                  /* Tamaño de fuente más pequeño */
+      margin-bottom: 2rem;              /* Reduce el margen inferior */
+    }
+
+    .contact-text {
+      font-size: 1rem;                  /* Tamaño de fuente más pequeño */
+      margin-bottom: 2rem;              /* Reduce el margen inferior */
+    }
+
+    .contact-item {
+      font-size: 0.95rem;               /* Tamaño de fuente más pequeño */
+    }
+
+    .social-links {
+      gap: 1.25rem;                     /* Reduce el espacio entre iconos */
+    }
+
+    .social-link {
+      width: 2.75rem;                   /* Tamaño ligeramente más pequeño */
+      height: 2.75rem;                  /* Tamaño ligeramente más pequeño */
+      font-size: 1.4rem;                /* Tamaño de icono ligeramente más pequeño */
+    }
+  }
+</style>

@@ -1,0 +1,173 @@
+---
+interface Project {
+	title: string;
+	description: string;
+	tech: string[];
+	link?: string;
+}
+
+const projects: Project[] = [
+	{
+		title: "E-commerce Platform",
+		description: "Plataforma de comercio electrónico construida con React y Node.js, featuring carrito de compras, procesamiento de pagos y panel de administración.",
+		tech: ["React", "Node.js", "MongoDB", "Stripe"],
+		link: "#"
+	},
+	{
+		title: "Task Management App",
+		description: "Aplicación web para gestión de tareas con drag & drop, notificaciones en tiempo real y colaboración en equipo.",
+		tech: ["Vue.js", "Firebase", "Tailwind CSS"],
+		link: "#"
+	},
+	{
+		title: "Weather Dashboard",
+		description: "Dashboard interactivo del clima con pronóstico extendido, mapas interactivos y datos históricos.",
+		tech: ["JavaScript", "API REST", "Chart.js", "CSS Grid"],
+		link: "#"
+	},
+	{
+		title: "Portfolio Website",
+		description: "Sitio web personal minimalista y responsive construido con Astro y TypeScript para óptimo rendimiento.",
+		tech: ["Astro", "TypeScript", "CSS", "SEO"],
+		link: "#"
+	}
+];
+---
+
+<section id="projects" class="projects">
+	<div class="container">
+		<h2 class="section-title">Proyectos</h2>
+		<div class="projects-grid">
+			{projects.map((project) => (
+				<div class="project-card">
+					<h3 class="project-title">{project.title}</h3>
+					<p class="project-description">{project.description}</p>
+					<div class="project-tech">
+						{project.tech.map((tech) => (
+							<span class="tech-tag">{tech}</span>
+						))}
+					</div>
+					{project.link && (
+						<a href={project.link} class="project-link">
+							Ver proyecto →
+						</a>
+					)}
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.projects {
+		padding: 6rem 0;
+		background: rgba(25, 25, 25, 0.85);
+		backdrop-filter: blur(5px);
+	}
+
+	.section-title {
+		font-size: 2.5rem;
+		text-align: center;
+		margin-bottom: 3rem;
+		font-weight: 600;
+		color: #ffffff;
+		text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+	}
+
+	.projects-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 2rem;
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+
+	.project-card {
+		background: rgba(40, 40, 40, 0.8);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-radius: 12px;
+		padding: 2rem;
+		transition: all 0.3s ease;
+		backdrop-filter: blur(5px);
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+	}
+
+	.project-card:hover {
+		transform: translateY(-6px);
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+		border: 1px solid rgba(96, 165, 250, 0.5);
+		background: rgba(50, 50, 50, 0.9);
+	}
+
+	.project-title {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		color: #ffffff;
+		font-weight: 600;
+	}
+
+	.project-description {
+		color: #e0e0e0;
+		margin-bottom: 1.5rem;
+		line-height: 1.7;
+		font-size: 1.05rem;
+	}
+
+	.project-tech {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.tech-tag {
+		display: inline-block;
+		background: rgba(96, 165, 250, 0.2);
+		color: #60a5fa;
+		padding: 0.35rem 0.9rem;
+		border-radius: 15px;
+		font-size: 0.85rem;
+		margin-right: 0.5rem;
+		margin-bottom: 0.5rem;
+		border: 1px solid rgba(96, 165, 250, 0.3);
+		transition: all 0.2s ease;
+	}
+
+	.tech-tag:hover {
+		background: rgba(96, 165, 250, 0.3);
+		transform: translateY(-1px);
+	}
+
+	.project-link {
+		color: var(--accent-color);
+		font-weight: 500;
+		text-decoration: none;
+		display: inline-flex;
+		align-items: center;
+		transition: opacity 0.2s ease;
+	}
+
+	.project-link:hover {
+		opacity: 0.8;
+	}
+
+	@media (max-width: 768px) {
+		.projects {
+			padding: 4rem 0;
+		}
+
+		.section-title {
+			font-size: 2rem;
+			margin-bottom: 2rem;
+		}
+
+		.projects-grid {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		}
+
+		.project-card {
+			padding: 1.5rem;
+		}
+	}
+</style>

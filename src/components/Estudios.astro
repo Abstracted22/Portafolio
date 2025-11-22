@@ -1,0 +1,153 @@
+---
+/**
+ * @file Estudios.astro
+ * @description Componente que muestra una sección con diplomas y certificaciones.
+ */
+---
+
+<!-- Sección de Estudios -->
+<section id="estudios" class="estudios">
+  <div class="container">
+    <h2 class="section-title">Mis Estudios</h2>
+    
+    <div class="diplomas-grid">
+      <img 
+        src="/images/PBASICA.jpg" 
+        alt="Programación Básica" 
+        class="diploma-img"
+        loading="lazy"
+        onclick="window.open(this.src, '_blank', 'width=800,height=1000')"
+        style="cursor: pointer;"
+      />
+      
+      <img 
+        src="/images/FPROGRAMACION.jpg" 
+        alt="Fundamentos de Programación" 
+        class="diploma-img"
+        loading="lazy"
+        onclick="window.open(this.src, '_blank', 'width=800,height=1000')"
+        style="cursor: pointer;"
+      />
+      
+      <img 
+        src="/images/120APPS.jpg" 
+        alt="120 Aplicaciones en 30 Días" 
+        class="diploma-img"
+        loading="lazy"
+        onclick="window.open(this.src, '_blank', 'width=800,height=1000')"
+        style="cursor: pointer;"
+      />
+      
+      <img 
+        src="/images/DSOFTWARE.jpg" 
+        alt="Diseño de Software" 
+        class="diploma-img"
+        loading="lazy"
+        onclick="window.open(this.src, '_blank', 'width=800,height=1000')"
+        style="cursor: pointer;"
+      />
+      
+      <img 
+        src="/images/APPSMOBILES.jpg" 
+        alt="Desarrollo de Aplicaciones Móviles" 
+        class="diploma-img"
+        loading="lazy"
+        onclick="window.open(this.src, '_blank', 'width=800,height=1000')"
+        style="cursor: pointer;"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Estilos para la sección de estudios */
+  .estudios {
+    padding: 4rem 0;
+    background: rgba(25, 25, 25, 0.85);
+    color: #fff;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+
+  /* Grid de diplomas */
+  .diplomas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+
+  /* Estilo de las imágenes de los diplomas */
+  .diploma-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+  }
+
+  .diploma-img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    opacity: 0.9;
+  }
+
+  .diploma-img:active {
+    transform: translateY(-2px);
+    opacity: 0.8;
+  }
+
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    .diplomas-grid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+
+    .section-title {
+      font-size: 2rem;                  /* Tamaño de fuente más pequeño */
+      margin-bottom: 2rem;              /* Reduce el margen inferior */
+    }
+
+    .links-grid {
+      grid-template-columns: 1fr;        /* Una columna en móviles */
+      gap: 1rem;                        /* Reduce el espacio entre tarjetas */
+      padding: 0 1rem;                  /* Ajusta el espaciado horizontal */
+    }
+
+    .link-card {
+      padding: 1.5rem;                  /* Reduce el espaciado interno */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .section-title {
+      font-size: 1.8rem;                /* Tamaño de fuente más pequeño */
+    }
+
+    .link-card h3 {
+      font-size: 1.3rem;                /* Tamaño de fuente más pequeño */
+    }
+
+    .link-card p {
+      font-size: 0.95rem;               /* Tamaño de fuente más pequeño */
+    }
+  }
+</style>

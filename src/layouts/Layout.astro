@@ -1,0 +1,125 @@
+---
+/**
+ * @file Layout.astro
+ * @description Layout principal que envuelve todas las páginas de la aplicación.
+ * Define la estructura base HTML, metadatos, estilos globales y provee un slot para el contenido de cada página.
+ */
+
+// Definición de las propiedades que acepta el componente Layout
+export interface Props {
+	title: string;            // Título de la página que aparecerá en la pestaña del navegador
+	description?: string;     // Descripción para SEO (opcional)
+	image?: string;          // URL de la imagen para redes sociales (opcional)
+}
+
+// Valores por defecto para las propiedades
+const { 
+	title, 
+	description = "Desarrollador Web especializado en crear experiencias digitales modernas y minimalistas.", 
+	image = "/og-image.jpg" 
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<!-- Configuración básica del documento -->
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- ===== SEO Meta Tags ===== -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="author" content="Edgar Rodriguez" />
+		
+		<!-- ===== Open Graph / Facebook ===== -->
+		<!-- Estas etiquetas mejoran el aspecto cuando se comparte en redes sociales -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={image} />
+		
+		<!-- ===== Twitter Card ===== -->
+		<!-- Configuración específica para Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={image} />
+		
+		<!-- Optimización de rendimiento -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<style>
+			/* ===== RESET BÁSICO ===== */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box; /* Incluye el padding y border en el ancho/alto de los elementos */
+			}
+
+			/* ===== VARIABLES CSS ===== */
+			:root {
+				--primary-color: #ffffff;           /* Color principal (blanco) */
+				--secondary-color: #e0e0e0;        /* Color secundario (gris claro) */
+				--accent-color: #60a5fa;           /* Color de acento (azul) */
+				--background-color: rgba(30, 30, 30, 0.9);  /* Color de fondo con transparencia */
+				--text-color: #f8f9fa;             /* Color de texto principal */
+				--border-color: rgba(255, 255, 255, 0.15);  /* Color de bordes con transparencia */
+				--max-width: 1200px;               /* Ancho máximo del contenido */
+			}
+
+			/* ===== ESTILOS GENERALES ===== */
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+				line-height: 1.8;  /* Espaciado entre líneas */
+				color: var(--text-color);
+				
+				/* Fondo con imagen y superposición oscura */
+				background: #1a1a1a url('/images/Background.jpg') no-repeat center center fixed;
+				background-size: cover;  /* Cubre todo el espacio disponible */
+				min-height: 100vh;  /* Mínimo el alto de la ventana */
+				background-blend-mode: overlay;  /* Mezcla el color con la imagen de fondo */
+			}
+
+			/* Contenedor principal */
+			.container {
+				max-width: var(--max-width);
+				margin: 0 auto;  /* Centra el contenedor */
+				padding: 0 2rem;  /* Espaciado horizontal */
+			}
+
+			/* Estilos para encabezados */
+			h1, h2, h3 {
+				font-weight: 600;
+				line-height: 1.2;  /* Espaciado más ajustado para títulos */
+			}
+
+			/* Estilos para enlaces */
+			a {
+				color: var(--accent-color);
+				text-decoration: none;
+				transition: opacity 0.2s ease;  /* Transición suave al hacer hover */
+			}
+
+			a:hover {
+				opacity: 0.8;  /* Efecto de desvanecimiento al pasar el mouse */
+			}
+
+			/* ===== MEDIA QUERIES ===== */
+			/* Estilos para pantallas pequeñas (hasta 768px) */
+			@media (max-width: 768px) {
+				.container {
+					padding: 0 1rem;  /* Menor espaciado en móviles */
+				}
+			}
+		</style>
+	</head>
+	<!-- Cuerpo del documento -->
+	<body>
+		<!-- Slot para el contenido de cada página -->
+		<slot />
+	</body>
+</html>

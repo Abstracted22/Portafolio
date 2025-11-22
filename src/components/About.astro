@@ -1,0 +1,203 @@
+---
+/**
+ * @file About.astro
+ * @description Sección "Sobre mí" que muestra información personal y habilidades técnicas.
+ * Incluye una breve biografía y una cuadrícula de habilidades con etiquetas.
+ */
+---
+
+<!-- Sección "Sobre mí" con ID para navegación -->
+<section id="about" class="about">
+	<div class="container">
+		<!-- Título de la sección -->
+		<h2 class="section-title">Sobre mí</h2>
+		
+		<!-- Contenido principal -->
+		<div class="about-content">
+			<div class="about-text">
+				<!-- Párrafo de introducción -->
+				<p>
+					Soy Edgar Rodriguez, un desarrollador web apasionado por crear soluciones digitales 
+					eficientes y elegantes. Me especializo en el desarrollo de aplicaciones web modernas 
+					con un enfoque en la experiencia del usuario y las mejores prácticas de desarrollo
+					para un funcionamiento excepcional.
+				</p>
+				
+				<!-- Segundo párrafo -->
+				<p>
+					Con experiencia en tecnologías frontend y backend, disfruto trabajando en proyectos 
+					que desafían mis habilidades y me permiten aprender constantemente. Mi objetivo es 
+					convertir ideas en productos digitales que marquen la diferencia.
+				</p>
+				
+				<!-- Sección de habilidades -->
+				<div class="skills">
+					<h3>Skills</h3>
+					<!-- Contenedor de la cuadrícula de habilidades -->
+					<div class="skills-grid">
+						<!-- Etiquetas de habilidades -->
+						<span class="skill">JavaScript/TypeScript</span>
+						<span class="skill">Kotlin</span>
+						<span class="skill">React/Vue/Astro</span>
+						<span class="skill">Node.js</span>
+						<span class="skill">HTML/CSS</span>
+						<span class="skill">Git</span>
+						<span class="skill">Responsive Design</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	/* ===== ESTILOS DE LA SECCIÓN "SOBRE MÍ" ===== */
+	.about {
+		padding: 6rem 0;  /* Espaciado vertical */
+		background-color: rgba(30, 30, 30, 0.8);  /* Fondo oscuro con transparencia */
+		backdrop-filter: blur(5px);  /* Efecto de desenfoque */
+		color: #f8f9fa;  /* Color de texto principal */
+	}
+
+	/* ===== ESTILOS DEL TÍTULO ===== */
+	.section-title {
+		font-size: 2.5rem;  /* Tamaño de fuente grande */
+		text-align: center;  /* Centrado horizontal */
+		margin-bottom: 3rem;  /* Espaciado inferior */
+		font-weight: 600;    /* Grosor de la fuente */
+		color: #ffffff;      /* Color blanco puro */
+		text-shadow: 0 2px 4px rgba(0,0,0,0.3);  /* Sombra de texto para mejor legibilidad */
+	}
+
+	/* ===== CONTENEDOR PRINCIPAL ===== */
+	.about-content {
+		max-width: 800px;  /* Ancho máximo del contenido */
+		margin: 0 auto;   /* Centrado horizontal */
+		padding: 2rem;    /* Espaciado interno */
+		background: rgba(40, 40, 40, 0.7);  /* Fondo semitransparente */
+		border-radius: 12px;  /* Bordes redondeados */
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);  /* Sombra sutil */
+		transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Transiciones suaves */
+	}
+
+	/* Efecto de elevación al pasar el mouse */
+	.about-content:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+	}
+
+	/* ===== TEXTO PRINCIPAL ===== */
+	.about-text {
+		text-align: center;  /* Texto centrado */
+	}
+
+	.about-text p {
+		font-size: 1.1rem;  /* Tamaño de fuente legible */
+		line-height: 1.8;   /* Espaciado entre líneas */
+		color: var(--secondary-color);  /* Color de texto secundario */
+		margin-bottom: 1.5rem;  /* Espaciado inferior */
+	}
+
+	/* ===== SECCIÓN DE HABILIDADES ===== */
+	.skills {
+		margin-top: 3rem;  /* Espaciado superior */
+	}
+
+	.skills h3 {
+		font-size: 1.5rem;  /* Tamaño de subtítulo */
+		margin-bottom: 1.5rem;  /* Espaciado inferior */
+		color: var(--text-color);  /* Color de texto principal */
+		text-align: center;  /* Texto centrado */
+	}
+
+	/* Cuadrícula de habilidades */
+	.skills-grid {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.8rem;
+		justify-content: center;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	/* Estilo de cada etiqueta de habilidad */
+	.skill {
+		display: inline-block;
+		background: rgba(255, 255, 255, 0.1);
+		color: #ffffff;
+		padding: 0.5rem 1rem;
+		border-radius: 20px;
+		margin: 0;
+		font-size: 0.9rem;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		transition: all 0.3s ease;
+		cursor: default;
+		line-height: 1.5;
+	}
+
+	/* Efecto al pasar el mouse sobre una habilidad */
+	.skill:hover {
+		background: rgba(96, 165, 250, 0.2);  /* Fondo azul al pasar el mouse */
+		transform: translateY(-2px);  /* Efecto de elevación */
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);  /* Sombra sutil */
+	}
+
+	/* ===== DISEÑO RESPONSIVE ===== */
+	/* Estilos para pantallas medianas (hasta 768px) */
+	@media (max-width: 768px) {
+		.about {
+			padding: 4rem 0;  /* Reduce el espaciado vertical */
+		}
+
+		.section-title {
+			font-size: 2rem;  /* Reduce el tamaño del título */
+			margin-bottom: 2rem;  /* Ajusta el espaciado inferior */
+		}
+
+		.about-content {
+			padding: 1.5rem;  /* Reduce el espaciado interno */
+			margin: 0 1rem;  /* Añade margen a los lados */
+		}
+
+		.about-text p {
+			font-size: 1rem;  /* Reduce ligeramente el tamaño de fuente */
+			text-align: left;  /* Alineación izquierda para mejor legibilidad */
+		}
+
+		.skills h3 {
+			font-size: 1.3rem;  /* Reduce el tamaño del subtítulo */
+		}
+
+		.skill {
+			font-size: 0.85rem;  /* Reduce el tamaño de fuente de las habilidades */
+			padding: 0.4rem 0.8rem;  /* Ajusta el espaciado interno */
+		}
+	}
+
+	/* Estilos para pantallas pequeñas (hasta 480px) */
+	@media (max-width: 480px) {
+		.section-title {
+			font-size: 1.8rem;  /* Tamaño de título aún más pequeño */
+		}
+
+		.about-content {
+			padding: 1.25rem;  /* Menor espaciado interno */
+		}
+
+		.about-text p {
+			font-size: 0.95rem;  /* Tamaño de fuente ligeramente menor */
+			line-height: 1.7;   /* Ajuste fino del interlineado */
+		}
+
+		.skills-grid {
+			gap: 0.75rem;  /* Reduce el espacio entre habilidades */
+		}
+
+		.skill {
+			font-size: 0.8rem;  /* Tamaño de fuente más pequeño */
+			padding: 0.35rem 0.7rem;  /* Menor espaciado interno */
+			margin: 0.25rem;  /* Menor margen */
+		}
+	}
+</style>
