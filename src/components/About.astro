@@ -14,6 +14,16 @@
 		
 		<!-- Contenido principal -->
 		<div class="about-content">
+			<!-- Contenedor de la imagen de perfil -->
+			<div class="profile-image-container">
+				<img 
+					src="/images/profile.jpg" 
+					alt="Edgar Rodriguez - Desarrollador Web" 
+					class="profile-image"
+					loading="lazy"
+				/>
+			</div>
+
 			<div class="about-text">
 				<!-- Párrafo de introducción -->
 				<p>
@@ -96,6 +106,41 @@
 		line-height: 1.8;   /* Espaciado entre líneas */
 		color: var(--secondary-color);  /* Color de texto secundario */
 		margin-bottom: 1.5rem;  /* Espaciado inferior */
+	}
+
+	/* Contenedor de la imagen de perfil */
+	.profile-image-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0 auto 2.5rem auto;
+		width: 220px;
+		height: 220px;
+		border-radius: 50%;
+		background: linear-gradient(145deg, var(--primary-color), var(--secondary-color));
+		padding: 6px;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+	}
+
+	/* Estilo de la imagen de perfil */
+	.profile-image {
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		object-fit: cover;
+		object-position: center;
+		border: 4px solid rgba(30, 30, 30, 0.9);
+		transform: translateZ(0); /* Mejora el renderizado en algunos navegadores */
+		-webkit-backface-visibility: hidden; /* Mejora la calidad en WebKit */
+		backface-visibility: hidden;
+		transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	}
+
+	/* Efecto hover para la imagen */
+	.profile-image:hover {
+		transform: scale(1.03) translateZ(0);
+		box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+		border-color: rgba(255, 255, 255, 0.1);
 	}
 
 	/* ===== SECCIÓN DE HABILIDADES ===== */
